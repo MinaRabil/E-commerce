@@ -10,14 +10,21 @@ import { Helmet } from "react-helmet";
 
 export default function Cart() {
   const [cartDetails, setCartDetails] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
   const { getCart, numOfCartItems, removeFromCart, clearCart,updateProductQty } = useContext(CartContext);
 
 
   async function getCartDetails() {
+    setIsLoading(true)
     const data = await getCart();
     if(data?.status == 'success'){
+      setIsLoading(false)
+
     setCartDetails(data);
     }else{
+      setIsLoading(false)
+
       setCartDetails(null);
 
     }
@@ -69,6 +76,7 @@ export default function Cart() {
     
     <section className='py-5'>       
       <div className="container">
+      {isLoading && <Loader />}
 
         <h2>Shopping Cart</h2>
 

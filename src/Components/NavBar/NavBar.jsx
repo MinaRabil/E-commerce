@@ -11,8 +11,8 @@ export default function NavBar() {
   const nav= useNavigate()
   function handleLogout() {
     setUserToken(null)
-/*      localStorage.removeItem("token")
-     nav("/login") */
+      localStorage.removeItem("token")
+     nav("/login") 
 
    }
 
@@ -42,10 +42,7 @@ export default function NavBar() {
             </li>
             <li className="nav-item position-relative">
               <NavLink className="nav-link" to="/cart">Cart
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                  {numOfCartItems}
-                  <span class="visually-hidden">unread messages</span>
-                </span>
+                
               </NavLink>
             </li>
 
@@ -54,6 +51,8 @@ export default function NavBar() {
 
 
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+          <li _ngcontent-ccr-c20="" class="nav-item position-relative"><Link _ngcontent-ccr-c20="" to="/cart" class="nav-link ng-star-inserted" href="/Ecommerce/cart"><i _ngcontent-ccr-c20="" class="fa-solid fa-cart-shopping fs-3"></i>
+     <div _ngcontent-ccr-c20="" class="badge position-absolute text-white top-0 end-0 bg-main">{numOfCartItems}</div></Link></li> 
             <li className="nav-item ">
               <a className="fab fa-facebook text-white mx-2 " href="https://www.facebook.com/" target='_blank'></a>
             </li>

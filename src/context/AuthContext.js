@@ -8,16 +8,17 @@ export default function AuthContextProvider({ children }) {
     const [userToken, setUserToken] = useState(null)
 
     const [userId, setUserId] = useState(null)
-    const token = localStorage.getItem('token');
-
-    const { id } = jwtDecode(token);
 
 
-    if(id){}
+
 
     useEffect(() => {
+        const token = localStorage.getItem('token');
+
         if (token) {
             setUserToken(token);
+
+            const { id } = jwtDecode(token);
             setUserId(id);
         }
     }, [])
