@@ -22,12 +22,12 @@ import ProductDetails from './Components/ProductDetails/ProductDetails';
 import { Offline, Online } from 'react-detect-offline';
 import CartContextProvider from './context/CartContext';
 import WhishListcontextProvider from './context/WhishListcontext';
-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import CheckOut from './Components/CheckOut/CheckOut';
 import ForgetPassword from './Components/ForgetPassword/ForgetPassword';
 import Wishlist from './Components/WishList/WishList';
+
 
 function App() {
   const routes = createBrowserRouter([

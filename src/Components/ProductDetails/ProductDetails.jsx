@@ -46,7 +46,7 @@ export default function ProductDetails() {
     <section className='py-5'>
       {isLoading && <Loader />
       }
-      <div className='container'>
+      <div className='container '>
         {isError && <div className='alert alert-danger'>{error.message}</div>}
         {
           data?.data.data && <div className='row align-items-center'>
@@ -62,8 +62,8 @@ export default function ProductDetails() {
 
             </div>
             <div className='col-md-9'>
-              <h3>{data.data.data.title}</h3>
-              <p className='text-muted'>{data.data.data.description}</p>
+              <h3 className=''>{data.data.data.title}</h3>
+              <p className='text-muted text-main'>{data.data.data.description}</p>
               <div className="d-flex justify-content-between mb-2">
                 <div>
                   <h4 className='h6'> {data.data.data.category.name}</h4>
